@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Buddy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="app">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-inner">
+        <div class="logo">
+          <span class="logo-text">Student Buddy</span>
+        </div>
+        <div class="quote-strip loading" id="quoteStrip">
+          <span id="quoteText">Loading quote…</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Tabs -->
+    <nav class="tabs">
+      <button class="tab active" data-tab="todos">
+        <span class="tab-label"><span class="tab-icon">✦</span> Tasks</span>
+      </button>
+      <button class="tab" data-tab="notes">
+        <span class="tab-label"><span class="tab-icon">✎</span> Notes</span>
+      </button>
+      <button class="tab" data-tab="links">
+        <span class="tab-label"><span class="tab-icon">⌘</span> Links</span>
+      </button>
+    </nav>
+
+    <!-- TODO TAB -->
+    <section class="panel active" id="todos">
+      <div class="input-row">
+        <input type="text" id="todoInput" class="text-input" placeholder="Add a new task…" maxlength="120" />
+        <button class="btn-add" id="addTodoBtn" title="Add task">+</button>
+      </div>
+      <div class="divider"></div>
+      <ul class="task-list" id="todoList"></ul>
+      <p class="empty-hint" id="todoEmpty">No tasks yet — add one above ↑</p>
+    </section>
+
+    <!-- NOTES TAB -->
+    <section class="panel" id="notes">
+      <textarea id="noteArea" class="note-area" placeholder="Jot down anything — ideas, formulas, deadlines…"></textarea>
+      <div class="note-footer">
+        <span class="char-count" id="charCount">0 / 2000</span>
+        <button class="btn-save" id="saveNoteBtn">Save</button>
+      </div>
+      <p class="save-status" id="saveStatus"></p>
+    </section>
+
+    <!-- QUICK LINKS TAB -->
+    <section class="panel" id="links">
+      <div class="input-row">
+        <input type="text" id="linkLabel" class="text-input half" placeholder="Label" maxlength="30" />
+        <input type="url" id="linkUrl" class="text-input half" placeholder="https://…" />
+        <button class="btn-add" id="addLinkBtn" title="Add link">+</button>
+      </div>
+      <div class="divider"></div>
+      <ul class="link-list" id="linkList"></ul>
+      <p class="empty-hint" id="linkEmpty">No shortcuts yet — add one above ↑</p>
+    </section>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
